@@ -1,0 +1,14 @@
+Wszystkie algorytmy zaimplementowane przez @illumitata
+
+UWAGI:
+-Każdy z folderów. zatem i programów, zawiera specjalnie przygotowanego "gotowca" do ściągania danych z pliku do tabeli znaków.
+ Funckja ta zgodnie z zalecieniami nie bierze pod uwagę znaków nowej linii (enter), spacji oraz EOF.
+-Programy nie są ze sobą w żaden sposób powiązane. Są "samodzielne", jeśli istnieje jakaś metoda z innego wyszukiwania
+ jest to uwzględnione w komentarzach.
+-Indeksy są liczone od 0 (bardzo ważne! nie zastosowałem się tym samym do zaleceń pozostawionych w komentarzach 
+ przez prowadzącego zajęcia wykładowcę dr. Pawła Pączkowskiego np. [1...m]).
+-Czas podawany jest w postaci sekund oraz "processing time", danego przebiegu samej części właściwej algorytmu.
+ Jedynym dodatkowym "nakładem" są printy odnalezionych miejsc występowania wzorców.
+
+KOMPILACJA:
+Wystarczy w terminalu wpisać make, plik Makefile jest skonfigurowany pod każdy z programów.

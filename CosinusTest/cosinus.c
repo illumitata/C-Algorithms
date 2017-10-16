@@ -35,12 +35,11 @@ double cosMaclaurinBack(double x, long int k){
   double sum = 0.0;
   double tmp[k];
 
-
   for(long int i=0; i<=k; i++){
       tmp[i] = potega(-1, i) * potega(x, 2*i) / silnia(2*i);
   }
 
-  for(long int i=k-1; i>=0; i--){
+  for(long int i=k; i>=0; i--){
       sum += tmp[i];
   }
 

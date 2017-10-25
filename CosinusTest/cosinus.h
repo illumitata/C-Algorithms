@@ -6,12 +6,12 @@
 
 #include "cosinus.h"
 
-double cosMaclaurinFront(double x, long int k);
+long double cosMaclaurinFront(long double x, long int k);
 
-double cosMaclaurinBack(double x, long int k);
+long double cosMaclaurinBack(long double x, long int k);
 
-double cosFront(double x, long int k);
+long double cosFront(long double x, long int k);
 
-double cosBack(double x, long int k);
+long double cosBack(long double x, long int k);
 
 #endif

@@ -8,7 +8,7 @@
 #define N 4 // size of integer array
 
 // Recursive Cantor Pairing Function
-unsigned long int CantorPair(int* tab, int n){
+unsigned long int CantorPair(int* tab, int n) {
 
   unsigned long int result;
 
@@ -25,15 +25,39 @@ unsigned long int CantorPair(int* tab, int n){
   return result;
 }
 
-int main(){
+// Method from: szudzik.com/ElegantPairing.pdf
+// Helping method max (TO DO: think about max from same numbers)
+int max(int a, int b){
+  if(a > b) return a;
+  else return b;
+}
 
-  int tab[N] = {6, 8, 3, 2};
+unsigned long int ElegantPair(int* tab, int n) {
+
+  unsigned long int result;
+
+  if(n > 1) {
+    if(tab[n-1] != max(tab[n-1], tab[n])) result = tab[n] * tab[n] \
+                                                   + ElegantPair(tab, n-1);
+    else result = ElegantPair(tab, n-1) * ElegantPair(tab, n-1) \
+                  + ElegantPair(tab, n-1) + tab[n];
+  }
+  else {
+    if(tab[n-1] != max(tab[n-1], tab[n])) result = tab[n] * tab[n] + tab[n-1];
+    else result = tab[n-1] * tab[n-1] + tab[n-1] + tab[n];
+  }
+  return result;
+}
+
+int main() {
+
+  int tab[N] = {2, 4, 6, 3};
 
   unsigned long int reusultCantor = CantorPair(tab, N-1);
   printf("CantorPair: %10li\n", reusultCantor);
 
-  // long int resultElegant = ElegantPair(tab);
-  // printf("ElegantPair: %10li\n", resultElegant);
+  unsigned long int resultElegant = ElegantPair(tab, N-1);
+  printf("ElegantPair:%10li\n", resultElegant);
 
   return 0;
 }
